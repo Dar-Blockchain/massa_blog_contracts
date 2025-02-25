@@ -12005,101 +12005,17 @@
   global.set $~lib/memory/__stack_pointer
   local.get $0
  )
- (func $"~lib/@massalabs/as-types/assembly/argument/Args#add<bool,void>" (param $0 i32) (param $1 i32) (result i32)
-  (local $2 i32)
-  (local $3 i32)
-  global.get $~lib/memory/__stack_pointer
-  i32.const 24
-  i32.sub
-  global.set $~lib/memory/__stack_pointer
-  call $~stack_check
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 24
-  memory.fill
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=16
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.load offset=4
-  local.tee $3
-  i32.store offset=8
-  global.get $~lib/memory/__stack_pointer
-  i32.const 1
-  call $~lib/staticarray/StaticArray<u8>#constructor
-  local.tee $2
-  i32.store offset=20
-  global.get $~lib/memory/__stack_pointer
-  local.get $2
-  i32.store offset=16
-  global.get $~lib/memory/__stack_pointer
-  i32.const 4
-  i32.sub
-  global.set $~lib/memory/__stack_pointer
-  call $~stack_check
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.store
-  global.get $~lib/memory/__stack_pointer
-  local.get $2
-  i32.store
-  local.get $2
-  call $~lib/staticarray/StaticArray<u8>#get:length
-  i32.eqz
-  if
-   i32.const 1152
-   i32.const 1504
-   i32.const 93
-   i32.const 41
-   call $~lib/builtins/abort
-   unreachable
-  end
-  global.get $~lib/memory/__stack_pointer
-  local.get $2
-  i32.store
-  local.get $2
-  local.get $1
-  i32.const 0
-  i32.ne
-  i32.store8
-  global.get $~lib/memory/__stack_pointer
-  i32.const 4
-  i32.add
-  global.set $~lib/memory/__stack_pointer
-  global.get $~lib/memory/__stack_pointer
-  local.get $2
-  i32.store offset=12
-  local.get $3
-  local.get $2
-  call $~lib/staticarray/StaticArray<u8>#concat<~lib/staticarray/StaticArray<u8>>
-  local.set $1
-  global.get $~lib/memory/__stack_pointer
-  local.get $1
-  i32.store offset=4
-  local.get $0
-  local.get $1
-  call $~lib/@massalabs/as-types/assembly/argument/Args#set:serialized
-  global.get $~lib/memory/__stack_pointer
-  i32.const 24
-  i32.add
-  global.set $~lib/memory/__stack_pointer
-  local.get $0
- )
  (func $assembly/structs/post/Post#serialize (param $0 i32) (result i32)
   (local $1 i32)
   (local $2 i32)
   global.get $~lib/memory/__stack_pointer
-  i32.const 56
+  i32.const 48
   i32.sub
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.const 56
+  i32.const 48
   memory.fill
   i32.const 0
   global.set $~argumentsLength
@@ -12107,29 +12023,14 @@
   local.set $1
   global.get $~lib/memory/__stack_pointer
   local.get $1
-  i32.store offset=48
+  i32.store offset=40
   global.get $~lib/memory/__stack_pointer
   local.get $0
-  i32.store offset=52
+  i32.store offset=44
   local.get $1
   local.get $0
   i64.load
   call $"~lib/@massalabs/as-types/assembly/argument/Args#add<u64,void>"
-  local.set $1
-  global.get $~lib/memory/__stack_pointer
-  local.get $1
-  i32.store offset=40
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=48
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.load offset=8
-  local.tee $2
-  i32.store offset=44
-  local.get $1
-  local.get $2
-  call $"~lib/@massalabs/as-types/assembly/argument/Args#add<~lib/@massalabs/massa-as-sdk/assembly/std/address/Address,void>"
   local.set $1
   global.get $~lib/memory/__stack_pointer
   local.get $1
@@ -12139,12 +12040,12 @@
   i32.store offset=40
   global.get $~lib/memory/__stack_pointer
   local.get $0
-  i32.load offset=12
+  i32.load offset=8
   local.tee $2
   i32.store offset=36
   local.get $1
   local.get $2
-  call $"~lib/@massalabs/as-types/assembly/argument/Args#add<~lib/string/String,void>"
+  call $"~lib/@massalabs/as-types/assembly/argument/Args#add<~lib/@massalabs/massa-as-sdk/assembly/std/address/Address,void>"
   local.set $1
   global.get $~lib/memory/__stack_pointer
   local.get $1
@@ -12154,7 +12055,7 @@
   i32.store offset=32
   global.get $~lib/memory/__stack_pointer
   local.get $0
-  i32.load offset=16
+  i32.load offset=12
   local.tee $2
   i32.store offset=28
   local.get $1
@@ -12169,7 +12070,7 @@
   i32.store offset=24
   global.get $~lib/memory/__stack_pointer
   local.get $0
-  i32.load offset=20
+  i32.load offset=16
   local.tee $2
   i32.store offset=20
   local.get $1
@@ -12178,25 +12079,18 @@
   local.set $1
   global.get $~lib/memory/__stack_pointer
   local.get $1
-  i32.store offset=12
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=16
-  local.get $1
-  local.get $0
-  i32.load8_u offset=24
-  call $"~lib/@massalabs/as-types/assembly/argument/Args#add<bool,void>"
-  local.set $1
-  global.get $~lib/memory/__stack_pointer
-  local.get $1
   i32.store offset=8
   global.get $~lib/memory/__stack_pointer
   local.get $0
+  i32.store offset=16
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.load offset=20
+  local.tee $2
   i32.store offset=12
   local.get $1
-  local.get $0
-  i64.load offset=32
-  call $"~lib/@massalabs/as-types/assembly/argument/Args#add<u64,void>"
+  local.get $2
+  call $"~lib/@massalabs/as-types/assembly/argument/Args#add<~lib/string/String,void>"
   local.set $1
   global.get $~lib/memory/__stack_pointer
   local.get $1
@@ -12206,7 +12100,7 @@
   i32.store offset=8
   local.get $1
   local.get $0
-  i64.load offset=40
+  i64.load offset=24
   call $"~lib/@massalabs/as-types/assembly/argument/Args#add<u64,void>"
   local.set $0
   global.get $~lib/memory/__stack_pointer
@@ -12216,7 +12110,7 @@
   call $~lib/@massalabs/as-types/assembly/argument/Args#serialize
   local.set $0
   global.get $~lib/memory/__stack_pointer
-  i32.const 56
+  i32.const 48
   i32.add
   global.set $~lib/memory/__stack_pointer
   local.get $0
